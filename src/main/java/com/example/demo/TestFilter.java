@@ -4,11 +4,13 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.*;
 import javax.servlet.FilterConfig;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Slf4j
-public class MyFilter implements Filter {
+@WebFilter(urlPatterns = {"/api/user/*","/user/*"}) //빈 이용 필터 url여기다 적어 적용 메인이 있은 클래스에 @ServletComponentScan 붙여야함
+public class TestFilter implements Filter {
 
 
     @Override
